@@ -5,7 +5,6 @@ services:
     restart: always
     volumes:
       - db-volume:/var/lib/mysql/
-      - ./articles.sql:/docker-entrypoint-initdb.d/articles.sql
     environment:
       MYSQL_ROOT_PASSWORD: test
       MYSQL_DATABASE: test
@@ -19,7 +18,7 @@ services:
     volumes:
       - ./app:/var/www/html/
     ports:
-      - 8080:80
+      - 8085:80
     depends_on:
       - db
 
@@ -28,7 +27,7 @@ services:
     container_name: web
     restart: always
     ports:
-      - 8081:80
+      - 8084:80
     depends_on:
       - db
 
