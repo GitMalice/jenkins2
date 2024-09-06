@@ -7,9 +7,9 @@ pipeline {
         echo 'build done'
       }
     }
-    stage('docker run'){
+    stage('docker compose'){
       steps {
-        sh 'docker run -d --name myapp_container myapp'
+        sh 'docker compose -d up'
       }
     }
     stage('docker ps'){
