@@ -13,9 +13,14 @@ pipeline {
         sh 'docker compose up -d'
       }
     }
-    stage('docker ps'){
+    stage('docker logs'){
       steps {
-        sh 'docker ps'
+        sh 'docker compose logs'
+      }
+    }
+    stage('docker down'){
+      steps {
+        sh 'docker compose logs'
       }
     }
   }
