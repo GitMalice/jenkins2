@@ -10,7 +10,7 @@ pipeline {
     stage('docker compose'){
       steps {
         sh 'docker compose down'
-        sh 'docker compose -d up'
+        sh 'docker compose up -d'
       }
     }
     stage('docker ps'){
